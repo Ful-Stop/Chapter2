@@ -72,7 +72,7 @@ public class BoxBox {
         String name = "mario kart";
         System.out.println(x);
         System.out.println(name);
-        System.out.println(b1);
+        System.out.println(b1); //calls the toString method with the values of what ever box you called
 
     }
 }
