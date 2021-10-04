@@ -3,7 +3,6 @@ package com.company;
 public class Fraction {
     private int numerator, denominator;		//attributes
 
-    // constructor
     public Fraction(int n, int d)	// constructor
     {
         numerator = n;
@@ -20,14 +19,16 @@ public class Fraction {
     {
         return numerator;
     }
+
     public int getDenom()
     {
         return denominator;
     }
-    public Fraction add(Fraction other)
+
+    public Fraction add(Fraction otherFrac)
     {
-        int n = this.numerator * other.denominator + this.denominator * other.numerator;
-        int d = this.denominator * other.getDenom();
+        int n = this.numerator * otherFrac.denominator + otherFrac.numerator * this.denominator;
+        int d = this.denominator * otherFrac.getDenom();
 
         Fraction result = new Fraction(n,d);
         return result;
@@ -51,7 +52,7 @@ public class Fraction {
         return result;
     }
 
-    public String toString();
+    public String toString()
     {
         String s = this.numerator + "/";
         s += this.denominator;
@@ -61,7 +62,7 @@ public class Fraction {
 
     public Fraction reciprocal()
     {
-        Fraction result = new Fraction(d,n);
+        Fraction result = new Fraction(this.denominator, this.numerator);
         return result;
     }
 
@@ -71,20 +72,21 @@ public class Fraction {
         Fraction f2 = new Fraction(4,5);
 
         Fraction f3 = f1.add(f2);			// add 2 fractions
-        System.out.println(toString(f1) " + " toString(f2) " = " + f3);	// print the answer
+        System.out.println(f1.toString() + " + " + f2.toString() + " = " + f3.toString());	// print the answer
 
-		/*
 		Fraction f4 = f1.subtract(f2);
-		System.out.println(f1 + " - " + f2 + " = " + f4);
+		System.out.println(f1.toString() + " - " + f2.toString() + " = " + f4.toString());
 
-		Add code to multiply f1 and f2 here
+        Fraction f5 = f1.multiply(f2);
+        System.out.println(f1.toString() + " * " + f2.toString() + " = " + f5.toString());
 
-		Add code to call reciprocal here
+        System.out.println("The reciprocal of " + f1.toString() + " is " + f1.reciprocal().toString());
 
-		create 2 new fractions and add them here.
+        Fraction f6 = new Fraction(6, 34);
+        Fraction f7 = new Fraction(12, 3);
 
-		*/
-
+        Fraction f8 = f6.add(f7);
+        System.out.println(f6.toString() + " + " + f7.toString() + " = " + f8.toString());	// print the answer
 
     }
 }
